@@ -39,7 +39,7 @@ public class ResultadoGeral {
                 c.populaCandidatos(i, alter);
             }
             p.fazerProva(c);
-            p.corrigirProva(qtdQuestoes);
+            p.corrigirProva();
             p.imprimirParticipantes();
         }
         p.imprimirParticipantes();
