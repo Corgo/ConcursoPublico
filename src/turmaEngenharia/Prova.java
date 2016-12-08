@@ -30,24 +30,23 @@ public class Prova {
         }
     }
 
-    public void corrigirProva() {
-       for (Concorrentes cand : todosConcorrentes) {
-            Iterator entries2 = cand.getResposta().entrySet().iterator();
-            Iterator entries = gabarito.entrySet().iterator();
-            while (entries.hasNext() || entries2.hasNext()) {
-                Map.Entry entry = (Map.Entry) entries.next();
-                Map.Entry entry2 = (Map.Entry) entries2.next();
-                Integer key = (Integer) entry.getKey();
-                String value = (String) entry.getValue();
-                Integer idResp = (Integer) entry2.getKey();
-                String valorResp = (String) entry2.getValue();
-                if (key.equals(idResp)) {
-                    if (value.equals(valorResp)) {
-                    cand.contarAcerto();
-                    }
+    
+    public void corrigirProva(Concorrentes a) {
+        Iterator entradaResp = a.getResposta().entrySet().iterator();
+        Iterator entradaGab = gabarito.entrySet().iterator();
+        while (entradaGab.hasNext()) {
+            Map.Entry entry = (Map.Entry) entradaGab.next();
+            Map.Entry entry2 = (Map.Entry) entradaResp.next();
+            Integer key = (Integer) entry.getKey();
+            String value = (String) entry.getValue();
+            Integer idResp = (Integer) entry2.getKey();
+            String valorResp = (String) entry2.getValue();
+            if (key.equals(idResp)) {
+                if (value.equals(valorResp)) {
+                    a.contarAcerto();
                 }
             }
-        }
+        } 
     }
 
     @Override
