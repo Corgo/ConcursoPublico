@@ -30,7 +30,7 @@ public class Prova {
         }
     }
 
-    public void corrigirProva(int qtdQuestoes) {
+    public void corrigirProva() {
        for (Concorrentes cand : todosConcorrentes) {
             Iterator entries2 = cand.getResposta().entrySet().iterator();
             Iterator entries = gabarito.entrySet().iterator();
