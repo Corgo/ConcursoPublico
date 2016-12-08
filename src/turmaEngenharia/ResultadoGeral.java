@@ -39,8 +39,7 @@ public class ResultadoGeral {
                 c.populaCandidatos(i, alter);
             }
             p.fazerProva(c);
-            p.corrigirProva();
-            p.imprimirParticipantes();
+            p.corrigirProva(c);
         }
         p.imprimirParticipantes();
         System.out.println("Gabarito - "+ p);
